@@ -1,0 +1,23 @@
+---
+cloud_controller_uri: <%= @cloud_controller_url %>
+service:
+  name: filesystem
+  version: "1.0"
+  description: 'Persistent filesystem service'
+  plans: ['free']
+  default_plan: 'free'
+  tags: ['filesystem', 'filesystem-1.0', 'Persistent filesystem service']
+  timeout: <%= node['cloudfoundry_filesystem_service']['gateway']['timeout'] %>
+token: <%= node['cloudfoundry_common']['service_token'] %>
+logging:
+  level: <%= node['cloudfoundry_filesystem_service']['gateway']['log_level'] %>
+  file: <%= node['cloudfoundry_filesystem_service']['gateway']['log_file'] %>
+
+mbus: <%= @mbus_url %>
+pid: <%= node['cloudfoundry_filesystem_service']['gateway']['pid_file'] %>
+node_timeout: <%= node['cloudfoundry_filesystem_service']['gateway']['node_timeout'] %>
+fs_type: <%= node['cloudfoundry_filesystem_service']['fs_type'] %>
+backends:
+<% node['cloudfoundry_filesystem_service']['backends'].each do |path| %>
+  - local_path: <%= path %>
+<% end %>
