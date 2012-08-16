@@ -20,8 +20,8 @@
 if node['cloudfoundry_filesystem_service']['fs_type']
   node['cloudfoundry_filesystem_service']['backends'].each do |d|
     directory d do
-      owner     node['cloudfoundry_common']['user']
-      group     node['cloudfoundry_common']['user']
+      owner     node['cloudfoundry']['user']
+      group     node['cloudfoundry']['user']
       mode      0755
       recursive true
     end

@@ -19,20 +19,7 @@
 
 include_recipe "cloudfoundry-filesystem-service::default"
 
-install_path = File.join(node['cloudfoundry_common']['vcap_services']['install_path'], "filesystem")
-
-cloudfoundry_common_source "filesystem" do
-  path          install_path
-  repository    node['cloudfoundry_common']['vcap_services']['repo']
-  reference     node['cloudfoundry_common']['vcap_services']['reference']
-  subdirectory  "filesystem"
-end
-
-cloudfoundry_common_component "filesystem_gateway" do
-  install_path  File.join(install_path, "filesystem")
-  bin_file      File.join(install_path, "filesystem", "bin", "filesystem_gateway")
-  pid_file      node['cloudfoundry_filesystem_service']['gateway']['pid_file']
-  log_file      node['cloudfoundry_filesystem_service']['gateway']['log_file']
+cloudfoundry_service_component "filesystem_gateway" do
+  service_name  "filesystem"
   action        [:create, :enable]
-  subscribes    :restart, resources("cloudfoundry-common_source" => "filesystem")
 end
