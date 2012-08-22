@@ -24,6 +24,7 @@ if node['cloudfoundry_filesystem_service']['fs_type']
       group     node['cloudfoundry']['user']
       mode      0755
       recursive true
+      not_if { ::File.exists?(d) && File.directory?(d) }
     end
   end
 end
