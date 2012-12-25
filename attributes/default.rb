@@ -1,9 +1,6 @@
 # Log level for the filesystem service gateway.
 default['cloudfoundry_filesystem_service']['gateway']['log_level'] = "info"
 
-# Base directory for instance-specific data.
-default['cloudfoundry_filesystem_service']['gateway']['base_dir'] = File.join(node['cloudfoundry']['services_dir'], "filesystem_gateway")
-
 # TODO (andreacampi): Find out what this does.
 default['cloudfoundry_filesystem_service']['gateway']['timeout'] = 15
 
