@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: cloudfoundry-filesystem-service
-# Recipe:: default
+# Recipe:: gateway
 #
 # Copyright 2012, ZephirWorks
 #
