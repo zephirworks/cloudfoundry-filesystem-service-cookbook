@@ -17,7 +17,6 @@
 # limitations under the License.
 #
 
-include_recipe "cloudfoundry-filesystem-service::default"
 
 cloudfoundry_service_component "filesystem_gateway" do
   service_name  "filesystem"
