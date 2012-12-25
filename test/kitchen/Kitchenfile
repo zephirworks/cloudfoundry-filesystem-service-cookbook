@@ -1,0 +1,3 @@
+cookbook "cloudfoundry-filesystem-service" do
+  runtimes []
+end
