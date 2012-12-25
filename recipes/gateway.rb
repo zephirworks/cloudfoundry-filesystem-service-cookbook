@@ -17,6 +17,9 @@
 # limitations under the License.
 #
 
+%w[libcurl4-openssl-dev sqlite3 libsqlite3-ruby libsqlite3-dev].each do |p|
+  package p
+end
 
 cloudfoundry_service_component "filesystem_gateway" do
   service_name  "filesystem"
