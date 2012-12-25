@@ -1,3 +1,4 @@
 cookbook "cloudfoundry-filesystem-service" do
+  configuration "gateway"
   runtimes []
 end
