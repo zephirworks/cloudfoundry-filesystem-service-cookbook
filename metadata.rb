@@ -1,3 +1,4 @@
+name             "cloudfoundry-filesystem-service"
 maintainer       "ZephirWorks"
 maintainer_email "andrea.campi@zephirworks.com"
 license          "Apache 2.0"
