@@ -12,7 +12,7 @@ describe 'cloudfoundry-mongodb-service::gateway' do
   before do
     # Give the service some time to register with the cloud_controller;
     # plus sometimes the cloud_controller is really slow to start.
-    sleep 65
+    sleep 75
   end
 
   it 'registers a service in the cloud_controller DB' do
