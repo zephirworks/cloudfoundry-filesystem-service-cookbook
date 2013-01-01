@@ -24,7 +24,6 @@ end
 
 include_recipe "cloudfoundry_service::dependencies"
 
-
 cloudfoundry_service_component "filesystem_gateway" do
   service_name  "filesystem"
   ruby_version  node['cloudfoundry_filesystem_service']['gateway']['ruby_version']
